@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Control</title>
+    <style>
+
+        .container{
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            width: 60%;
+            height: 400px;
+            border: solid 2px red;
+            margin: auto;
+        }
+
+        .container .form{
+            width: 60%;
+            height: 300px;
+            background-color: #ccc;
+
+        }
+
+        .container .form .input-control{
+            width: 80%;
+            padding: 2px;
+            margin-left: 5px;
+        }
+        .container .form .btn {
+            width: 120px;
+            background-color: black;
+            color: white;
+            font-size: 1.2em;
+            margin: 5px 20px;
+        }
+
+        .container .result{
+          width: 35%;
+          height: 300px;
+          background-color: #cff;
+        }
+
+        .container .result  .result-panel{
+            width: 80%;
+            height: 100px;
+            margin: 10px;
+            background-color: #474545;
+            color: white;
+            font-size: 1.3em;
+        }
+
+    </style>
+    <script>
+        // flow control 
+      
+        // if (score === 55) {
+        //      console.log("Good Grade");
+        //     console.log("Ready for admission");
+        // }
+
+        // console.log("Default Line");
+
+
+        // if(score > 60){
+        //     console.log("Good Result");
+        // }else{           
+            
+        //     console.log("Average Grade");
+        // }
+
+        if(score > 50 ){
+            console.log("Good Result");
+        }
+        else if(score== 50){
+           console.log("Average Result");
+        }else{
+            console.log("Poor Result");
+        }     
+    </script>
+</head>
+<body>
+
+    <h3>Flow Control </h3>
+    
+    <p>
+        <ol>
+            <li>IF</li>
+            <li>IF / Else</li>
+            <li>IF ELseIF  ELse</li>
+        </ol>
+    </p>
+
+    <div class="container">
+        <div class="form">
+            <h1>Grade Generator</h1>
+            <h4>Student Score</h4>
+
+            <input type="number" class="input-control" id="input-control"  placeholder="Enter Your Score">
+            <button class="btn" type="button" id="submitBtn">Submit</button>
+        </div>
+
+        <div class="result">
+            <h3>Calculated Grade</h3>
+            <div class="result-panel"  id="result-panel">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let submitBtn = document.getElementById("submitBtn");
+        console.log(submitBtn);
+
+        submitBtn.addEventListener("click", 
+        
+        function(){
+        let input = document.getElementById("input-control");
+        let score = input.value;
+
+        console.log(typeof score);
+        let grade = null;
+
+         if(score >= 80){
+            grade = "A"
+        }
+        else if(score >= 70){
+            grade = "B"
+        }
+        else if(score >= 60){
+            grade = "C";
+        }
+        else if(score >=50){
+            grade = "D"
+        }else{
+            grade ="F";
+        }
+
+        console.log("Score = "+ score+ " , Grade= "+ grade);
+
+        let resultPanel = document.getElementById("result-panel");
+        console.log(resultPanel);
+
+        resultPanel.innerHTML =  " Grade= "+ grade;
+    
+        }
+    
+    );
+
+
+    </script>
+    
+</body>
+</html>
